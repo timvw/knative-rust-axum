@@ -5,3 +5,4 @@ target/
 # .func in source control, comment the following line (prefix it with '# ').
 /.func
 .idea/
+Cargo.lock
