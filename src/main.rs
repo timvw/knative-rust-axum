@@ -1,6 +1,6 @@
 use std::{
     env,
-    io::{Error, ErrorKind, Result},
+    io::{Error, Result},
     num::ParseIntError,
 };
 
@@ -23,7 +23,7 @@ async fn main() -> Result<()> {
     let port = match env::var("PORT") {
         Ok(v) => v
             .parse()
-            .map_err(|e: ParseIntError| Error::new(ErrorKind::Other, e.to_string()))?,
+            .map_err(|e: ParseIntError| Error::other(e.to_string()))?,
         Err(_) => 8080,
     };
 
